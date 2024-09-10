@@ -1,0 +1,136 @@
+/* header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #D3D6DA;
+  margin-bottom: 10px;
+}
+
+
+.menu-left {
+  /* border: 1px solid black; */
+  width: 40px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-left>img {
+  width: 20px;
+  height: 20px;
+}
+
+.menu-left:hover {
+  background-color: #EBEBEB;
+  cursor: pointer;
+}
+
+.menu-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-right>.menu-right-block {
+  width: 40px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-right>.menu-right-block:hover {
+  background-color: #EBEBEB;
+  cursor: pointer;
+}
+
+.menu-right>.menu-right-block>img {
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  margin: 0 10px;
+}
+
+.menu-right>button {
+  height: 30px;
+  border-radius: 20px;
+  background-color: white;
+  padding: 0 10px;
+  margin: 0 20px;
+}
+
+.menu-right>button:hover {
+  cursor: pointer;
+}
+
+
+/* main */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.board-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.board-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #D3D6DA;
+}
+
+/* footer */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.keyboard-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 60px;
+  background-color: #D3D6DA;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.keyboard-block:hover {
+  cursor: pointer;
+}
+
+.enter,
+.img {
+  font-size: 13px;
+  width: 70px;
+}
+
+.keyboard-block>img {
+  width: 20px;
+}
