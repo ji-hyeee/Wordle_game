@@ -5,12 +5,14 @@ let attempts = 0;
 let index = 0;
 let timer
 
+
 function appStart() {
   const nextLine = () => {
     if (attempts === 6) return;
     attempts++;
     index = 0;
   }
+
 
   const displayGameover = () => {
     const div = document.createElement("div");
@@ -20,11 +22,13 @@ function appStart() {
     document.body.appendChild(div);
   }
 
+
   const gameover = () => {
     window.removeEventListener('keydown', handleKeydown);
     displayGameover();
     clearInterval(timer);
   };
+
 
   const handleEnterkey = () => {
     let 맞은_갯수 = 0;
@@ -54,9 +58,11 @@ function appStart() {
       block.style.color = 'white';
     }
 
+
     if (맞은_갯수 === 5) gameover();
     else nextLine();
   };
+
 
   const hanedleBackspace = () => {
     if (index > 0) {
@@ -67,6 +73,7 @@ function appStart() {
     }
     if (index !== 0) index -= 1;
   }
+
 
   const handleKeydown = (event) => {
     const key = event.key.toUpperCase();
@@ -85,9 +92,32 @@ function appStart() {
       index++;
     };
   }
-
   window.addEventListener('keydown', handleKeydown);
+
+
+  const handleClick = (event) => {
+    const key = event.target.dataset.key;
+
+    const thisBlock = document.querySelector(
+      `.board-block[data-index='${attempts}${index}']`
+    );
+
+    thisBlock.innerHTML = key;
+
+    if (key === 'BACK') hanedleBackspace();
+    else if (index === 5) {
+      if (key === 'ENTER') handleEnterkey();
+      else return;
+    }
+    else {
+      thisBlock.innerHTML = key;
+      index++;
+    };
+  }
+  window.addEventListener('click', handleClick);
 }
+
+
 
 appStart();
 
@@ -109,3 +139,10 @@ const clock = () => {
 };
 
 clock();
+
+
+
+// 클릭 이벤트 적용
+// 클릭 했을 때 그버튼의 값 찾아보기
+// 그 값을 첫번째 칸에 업데이트하기
+// 나머지는 기존 로직 똑같이 하면 되지 않을까
