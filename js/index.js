@@ -1,5 +1,4 @@
 //// Wordle
-const 정답 = 'HAPPY';
 
 let attempts = 0;
 let index = 0;
@@ -30,8 +29,11 @@ function appStart() {
   };
 
 
-  const handleEnterkey = () => {
+  const handleEnterkey = async () => {
     let 맞은_갯수 = 0;
+
+    const 응답 = await fetch('/answer');
+    const 정답 = await 응답.json();
 
     for (let i = 0; i < 5; i++) {
       const block = document.querySelector(
@@ -42,18 +44,15 @@ function appStart() {
       const 정답_글자 = 정답[i];
 
       if (입력한_글자 === 정답_글자) {
+        block.classList.add("rightWord");
         맞은_갯수++;
-        block.style.background = '#6AA964';
-        block.style.border = '2px solid #6AA964';
       }
 
       else if (정답.includes(입력한_글자)) {
-        block.style.background = '#C9B458';
-        block.style.border = '2px solid #C9B458';
+        block.classList.add("includeWord");
       }
       else {
-        block.style.background = '#787C7E';
-        block.style.border = '2px solid #787C7E';
+        block.classList.add("wrongWord");
       }
       block.style.color = 'white';
     }

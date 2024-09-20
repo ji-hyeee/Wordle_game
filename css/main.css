@@ -94,6 +94,48 @@ main {
   /* 폰트 굵기 수정 */
   font-size: 30px;
   font-weight: bolder;
+
+  perspective: 1100px;
+}
+
+.board-block:hover {
+  transform: rotateX(180deg);
+}
+
+
+@keyframes rotateWord {
+  /* 0% {
+    transform: rotateX(0deg);
+  }
+
+  50% {
+    transform: rotateX(180deg);
+  } */
+
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+
+.rightWord {
+  background-color: #6AA964;
+  border: 2px solid #6AA964;
+  animation: rotateWord;
+  animation-duration: 1s;
+}
+
+.includeWord {
+  background-color: #C9B458;
+  border: 2px solid #C9B458;
+  animation: rotateWord;
+  animation-duration: 1s;
+}
+
+.wrongWord {
+  background-color: #787C7E;
+  border: 2px solid #787C7E;
+  animation: rotateWord;
+  animation-duration: 1s;
 }
 
 /* footer */
